@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ibrahim Siraj — AI Specialist & Video Editor</title>
+<meta name="description" content="Ibrahim Siraj is an AI data specialist, machine learning trainer and video editor based in Addis Ababa, Ethiopia.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#06060A;--surface:#0F0F17;--card:#141420;--border:#1E1E2E;
+  --ink:#F0EFF8;--muted:#7C7B99;--dim:#3A3A55;
+  --accent:#7B61FF;--accent2:#FF6B6B;--accent3:#00E5C3;
+  --on-accent:#fff;
+  --ff:'Space Grotesk',sans-serif;--fm:'Space Mono',monospace;
+}
+html{scroll-behavior:smooth;scroll-padding-top:80px;color-scheme:dark}
+body{background:var(--bg);color:var(--ink);font-family:var(--ff);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+body::before{content:'';position:fixed;inset:0;background-image:linear-gradient(rgba(123,97,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(123,97,255,.04) 1px,transparent 1px);background-size:60px 60px;pointer-events:none;z-index:0}
+body::after{content:'';position:fixed;top:-40%;left:-20%;width:80vw;height:80vw;background:radial-gradient(ellipse at center,rgba(123,97,255,.07) 0%,transparent 65%);pointer-events:none;z-index:0}
+.wrap{max-width:1100px;margin:0 auto;padding:0 32px;position:relative;z-index:1}
+
+/* NAV */
+header{position:sticky;top:0;z-index:100;border-bottom:1px solid var(--border);backdrop-filter:blur(16px) saturate(1.5);background:rgba(6,6,10,.8)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:68px}
+.brand{font-family:var(--fm);font-size:15px;font-weight:700;letter-spacing:.02em}
+.brand span{color:var(--accent)}
+nav{display:flex;gap:28px;align-items:center}
+nav a{font-size:13px;font-weight:500;color:var(--muted);letter-spacing:.05em;text-transform:uppercase;transition:color .2s}
+nav a:hover{color:var(--ink)}
+.nav-cta{background:var(--accent)!important;color:var(--on-accent)!important;padding:9px 20px;border-radius:6px;font-size:13px!important;font-weight:700!important;letter-spacing:.04em!important}
+
+/* HERO */
+.hero{padding:130px 0 100px}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-family:var(--fm);font-size:12px;color:var(--accent3);letter-spacing:.12em;text-transform:uppercase;margin-bottom:40px;border:1px solid rgba(0,229,195,.2);padding:8px 16px;border-radius:100px}
+.eyebrow::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--accent3);animation:pulse 2s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.8)}}
+h1{font-size:clamp(52px,9vw,110px);font-weight:700;line-height:.95;letter-spacing:-.04em;margin-bottom:32px}
+.ghost{display:block;color:transparent;-webkit-text-stroke:2px rgba(240,239,248,.2)}
+.grad{background:linear-gradient(135deg,var(--accent) 0%,#B8A0FF 50%,var(--accent2) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.lead{font-size:18px;color:var(--muted);max-width:52ch;line-height:1.7;margin-bottom:48px}
+.lead strong{color:var(--ink);font-weight:600}
+.hero-btns{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:80px}
+.btn-fill{display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:var(--on-accent);padding:14px 28px;border-radius:8px;font-weight:700;font-size:15px;transition:transform .15s,box-shadow .15s}
+.btn-fill:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(123,97,255,.4)}
+.btn-ghost{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--border);color:var(--muted);padding:14px 28px;border-radius:8px;font-weight:600;font-size:15px;transition:border-color .2s,color .2s}
+.btn-ghost:hover{border-color:var(--dim);color:var(--ink)}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--border);border-radius:16px;overflow:hidden;background:var(--card)}
+.stat{padding:28px 24px;border-right:1px solid var(--border);position:relative;overflow:hidden}
+.stat:last-child{border-right:0}
+.stat::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--accent),transparent);opacity:0;transition:opacity .3s}
+.stat:hover::before{opacity:1}
+.sn{font-family:var(--fm);font-size:clamp(26px,3.5vw,42px);font-weight:700;color:var(--accent);line-height:1;display:block;margin-bottom:8px}
+.sl{font-size:13px;color:var(--muted);line-height:1.4}
+
+/* SECTION */
+section{padding:100px 0 0}
+.slabel{font-family:var(--fm);font-size:11px;color:var(--accent);letter-spacing:.15em;text-transform:uppercase;margin-bottom:16px;display:flex;align-items:center;gap:12px}
+.slabel::after{content:'';flex:1;max-width:60px;height:1px;background:var(--accent);opacity:.4}
+h2{font-size:clamp(32px,4.5vw,52px);font-weight:700;letter-spacing:-.03em;margin-bottom:56px;line-height:1.05}
+
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:64px;align-items:start}
+.about-left p{font-size:19px;line-height:1.65;color:var(--muted);margin-bottom:18px}
+.about-left p strong{color:var(--ink)}
+.langs{margin-top:32px}
+.li{display:flex;align-items:center;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--border);font-size:14px}
+.li:last-child{border:0}
+.ln{font-weight:600}
+.ll{font-family:var(--fm);font-size:12px;color:var(--accent3);background:rgba(0,229,195,.08);padding:4px 12px;border-radius:100px;border:1px solid rgba(0,229,195,.15)}
+.edu{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:32px;position:relative;overflow:hidden}
+.edu::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent),var(--accent2))}
+.eu{font-family:var(--fm);font-size:12px;color:var(--muted);margin-bottom:12px;letter-spacing:.06em}
+.ed{font-size:22px;font-weight:700;margin-bottom:6px}
+.ey{font-size:13px;color:var(--accent);font-family:var(--fm);margin-bottom:20px}
+.courses{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.cc{font-size:12px;background:rgba(123,97,255,.1);color:var(--accent);border:1px solid rgba(123,97,255,.2);padding:4px 12px;border-radius:100px}
+.cap{margin-top:20px;padding:16px;border-radius:10px;background:rgba(0,229,195,.04);border:1px solid rgba(0,229,195,.1)}
+.capl{font-size:11px;font-family:var(--fm);color:var(--accent3);letter-spacing:.08em;margin-bottom:6px}
+.cap p{font-size:13px;color:var(--muted);line-height:1.5}
+
+/* EXPERIENCE */
+.exp{display:grid;grid-template-columns:200px 1fr;gap:0 48px;padding:48px 0;border-top:1px solid var(--border)}
+.exp:last-child{border-bottom:1px solid var(--border)}
+.ep{font-family:var(--fm);font-size:12px;color:var(--muted);margin-bottom:8px;line-height:1.5}
+.badge{display:inline-block;font-size:11px;font-weight:700;padding:4px 10px;border-radius:100px;font-family:var(--fm);letter-spacing:.04em}
+.bnow{background:rgba(0,229,195,.12);color:var(--accent3);border:1px solid rgba(0,229,195,.2)}
+.bpast{background:rgba(123,97,255,.1);color:var(--accent);border:1px solid rgba(123,97,255,.2)}
+.exp h3{font-size:26px;font-weight:700;letter-spacing:-.02em;margin-bottom:4px}
+.co{font-family:var(--fm);font-size:13px;color:var(--accent);margin-bottom:24px;display:flex;align-items:center;gap:6px}
+.co::before{content:'@';opacity:.5}
+.xlist{list-style:none}
+.xlist li{display:grid;grid-template-columns:20px 1fr;gap:0 12px;margin-bottom:14px;font-size:15px;color:var(--muted);line-height:1.6}
+.xlist li::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--accent);margin-top:10px;justify-self:center}
+
+/* ═══════ VIDEO SHOWCASE ═══════ */
+.yt-intro{font-size:17px;color:var(--muted);max-width:60ch;line-height:1.7;margin:-24px 0 48px}
+
+/* Channel selector tabs */
+.ch-tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:40px}
+
+.ch-tab{
+  background:var(--card);border:1px solid var(--border);border-radius:14px;
+  padding:0;overflow:hidden;cursor:pointer;transition:border-color .2s,transform .2s;
+  text-align:left;position:relative;
+}
+.ch-tab:hover{transform:translateY(-3px);border-color:var(--dim)}
+.ch-tab.active{border-color:var(--accent)}
+.ch-tab.active .ch-accent-bar{opacity:1}
+
+.ch-accent-bar{position:absolute;top:0;left:0;right:0;height:3px;opacity:0;transition:opacity .2s}
+.bar-purple{background:linear-gradient(90deg,#7B61FF,#B8A0FF)}
+.bar-red{background:linear-gradient(90deg,#FF6B6B,#FF9A9A)}
+.bar-orange{background:linear-gradient(90deg,#FF9A3C,#FFB96B)}
+
+.ch-banner{
+  height:80px;display:flex;align-items:center;justify-content:center;
+  font-size:38px;position:relative;overflow:hidden;
+}
+.ban-purple{background:linear-gradient(135deg,#120a2e 0%,#2a1455 100%)}
+.ban-red{background:linear-gradient(135deg,#2a0808 0%,#4a1010 100%)}
+.ban-orange{background:linear-gradient(135deg,#2a1400 0%,#4a2800 100%)}
+.ch-banner::after{content:'';position:absolute;inset:0;background:repeating-linear-gradient(45deg,transparent,transparent 12px,rgba(255,255,255,.012) 12px,rgba(255,255,255,.012) 24px)}
+
+.ch-body{padding:16px 18px 18px}
+.ch-name{font-size:16px;font-weight:700;margin-bottom:3px}
+.ch-niche{font-size:12px;color:var(--muted);margin-bottom:12px}
+
+.ch-subs{
+  display:inline-flex;align-items:center;gap:6px;
+  font-family:var(--fm);font-size:12px;font-weight:700;
+  padding:5px 12px;border-radius:6px;margin-bottom:12px;
+}
+.subs-purple{background:rgba(123,97,255,.12);color:#A08CFF;border:1px solid rgba(123,97,255,.2)}
+.subs-red{background:rgba(255,107,107,.1);color:#FF8A8A;border:1px solid rgba(255,107,107,.2)}
+.subs-orange{background:rgba(255,154,60,.1);color:#FFB96B;border:1px solid rgba(255,154,60,.2)}
+.ch-subs::before{content:'';width:6px;height:6px;border-radius:50%;background:currentColor}
+
+.ch-tags{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:14px}
+.ch-tag{font-size:11px;font-family:var(--fm);padding:3px 8px;border-radius:4px;background:rgba(255,255,255,.04);border:1px solid var(--border);color:var(--muted)}
+
+.ch-footer{display:flex;align-items:center;justify-content:space-between;padding-top:12px;border-top:1px solid var(--border)}
+.ch-role{font-size:11px;color:var(--accent3);font-family:var(--fm)}
+.yt-btn{
+  display:inline-flex;align-items:center;gap:5px;
+  font-size:12px;font-weight:700;padding:6px 12px;border-radius:6px;
+  background:rgba(255,0,0,.1);border:1px solid rgba(255,0,0,.2);
+  color:#FF5555;transition:background .2s;
+}
+.yt-btn:hover{background:rgba(255,0,0,.2)}
+.yt-btn svg{width:13px;height:13px;flex-shrink:0}
+
+/* VIDEO GRID PANEL */
+.video-panel{
+  background:var(--card);border:1px solid var(--border);border-radius:16px;overflow:hidden;
+}
+.vp-header{
+  padding:18px 24px;border-bottom:1px solid var(--border);
+  display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;
+}
+.vp-title{font-size:15px;font-weight:700;display:flex;align-items:center;gap:10px}
+.vp-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;transition:background .3s}
+.vp-hint{font-size:12px;color:var(--muted);font-family:var(--fm)}
+.vp-hint a{color:var(--accent);text-decoration:underline;text-underline-offset:3px}
+
+.vgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border)}
+
+/* individual video card */
+.vc{
+  background:var(--card);display:block;
+  transition:background .2s;position:relative;
+  text-decoration:none;
+}
+.vc:hover{background:#1c1c2a}
+.vc-thumb{
+  aspect-ratio:16/9;overflow:hidden;position:relative;background:#0a0a14;
+}
+.vc-thumb img{
+  width:100%;height:100%;object-fit:cover;display:block;
+  transition:transform .35s,filter .3s;filter:brightness(.85);
+}
+.vc:hover .vc-thumb img{transform:scale(1.07);filter:brightness(1)}
+.vc-overlay{
+  position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+  background:rgba(0,0,0,.4);opacity:0;transition:opacity .25s;
+}
+.vc:hover .vc-overlay{opacity:1}
+.play-circle{
+  width:50px;height:50px;border-radius:50%;
+  background:rgba(255,255,255,.95);display:flex;align-items:center;justify-content:center;
+  transform:scale(.8);transition:transform .25s;
+}
+.vc:hover .play-circle{transform:scale(1)}
+.play-circle svg{width:18px;height:18px;margin-left:3px;fill:#111}
+
+.vc-info{padding:11px 13px 13px}
+.vc-ttl{
+  font-size:13px;font-weight:600;line-height:1.4;color:var(--ink);
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;
+  margin-bottom:5px;
+}
+.vc-meta{font-size:11px;color:var(--muted);font-family:var(--fm)}
+
+/* no-thumb fallback */
+.vc-placeholder{
+  aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;
+  background:#0e0e1a;font-size:30px;
+}
+/* full-channel CTA (no videos) */
+.ch-cta{
+  padding:52px 24px;text-align:center;
+  display:flex;flex-direction:column;align-items:center;gap:14px;
+}
+.ch-cta .cta-icon{font-size:44px}
+.ch-cta h3{font-size:20px;font-weight:700}
+.ch-cta p{font-size:15px;color:var(--muted);max-width:42ch;line-height:1.6}
+.cta-yt-btn{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:13px 26px;border-radius:8px;
+  background:rgba(255,0,0,.1);border:1px solid rgba(255,0,0,.22);
+  color:#FF5555;font-weight:700;font-size:15px;
+  transition:background .2s;margin-top:4px;
+}
+.cta-yt-btn:hover{background:rgba(255,0,0,.2)}
+
+/* SKILLS */
+.skills-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.sk{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:28px;transition:border-color .25s,transform .25s}
+.sk:hover{border-color:var(--dim);transform:translateY(-3px)}
+.sk-icon{width:40px;height:40px;border-radius:10px;margin-bottom:16px;display:flex;align-items:center;justify-content:center;font-size:20px;background:rgba(123,97,255,.12)}
+.sk h3{font-size:16px;font-weight:700;margin-bottom:14px}
+.chips{display:flex;flex-wrap:wrap;gap:7px}
+.chip{font-size:12px;font-family:var(--fm);padding:5px 12px;border-radius:6px;background:rgba(255,255,255,.04);border:1px solid var(--border);color:var(--muted);transition:background .2s,border-color .2s,color .2s}
+.chip:hover{background:rgba(123,97,255,.1);border-color:rgba(123,97,255,.3);color:var(--ink)}
+
+/* CONTACT */
+.contact-wrap{margin-top:100px;padding:80px 0;border-top:1px solid var(--border);position:relative}
+.contact-wrap::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:300px;height:300px;background:radial-gradient(ellipse at center,rgba(123,97,255,.1) 0%,transparent 70%);pointer-events:none}
+.ci{text-align:center;position:relative}
+.ci h2{margin-bottom:16px}
+.csub{font-size:18px;color:var(--muted);max-width:48ch;margin:0 auto 48px}
+.email-link{display:inline-block;font-family:var(--fm);font-size:clamp(14px,2.5vw,22px);font-weight:700;color:var(--accent);margin-bottom:40px;padding:20px 36px;border:1px solid rgba(123,97,255,.3);border-radius:12px;background:rgba(123,97,255,.06);transition:background .2s,border-color .2s,transform .2s;word-break:break-all}
+.email-link:hover{background:rgba(123,97,255,.12);border-color:rgba(123,97,255,.5);transform:translateY(-2px)}
+
+footer{padding:28px 0 40px;border-top:1px solid var(--border);color:var(--muted);font-size:13px;font-family:var(--fm)}
+footer .wrap{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+
+@media(max-width:900px){
+  .stats{grid-template-columns:1fr 1fr}
+  .stat:nth-child(2){border-right:0}
+  .stat:nth-child(n+3){border-top:1px solid var(--border)}
+  .about-grid,.skills-grid{grid-template-columns:1fr}
+  .about-grid{gap:40px}
+  .exp{grid-template-columns:1fr;gap:16px}
+  .ch-tabs{grid-template-columns:1fr}
+  .vgrid{grid-template-columns:repeat(2,1fr)}
+  nav a:not(.nav-cta):not(:nth-last-child(2)){display:none}
+}
+@media(max-width:560px){
+  .wrap{padding:0 18px}
+  .ghost{display:none}
+  .stats{grid-template-columns:1fr}
+  .stat{border-right:0!important;border-bottom:1px solid var(--border)}
+  .stat:last-child{border-bottom:0}
+  .vgrid{grid-template-columns:1fr}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="brand"><span>IS</span> / Ibrahim Siraj</div>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#experience">Work</a>
+      <a href="#channels">Videos</a>
+      <a href="#skills">Skills</a>
+      <a class="nav-cta" href="mailto:IbrarahimSiraj49@gmail.com">Hire me</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<div class="wrap">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="eyebrow">Available for new work</div>
+    <h1>
+      <span style="display:block">Ibrahim<br><span class="grad">Siraj.</span></span>
+      <span class="ghost" aria-hidden="true">AI&nbsp;Specialist</span>
+    </h1>
+    <p class="lead">I train <strong>language models</strong> and <strong>computer vision systems</strong> using RLHF and supervised fine-tuning — and I edit video for creators who need their audience to stay until the end. Based in <strong>Addis Ababa</strong>.</p>
+    <div class="hero-btns">
+      <a class="btn-fill" href="mailto:IbrarahimSiraj49@gmail.com">Get in touch</a>
+      <a class="btn-ghost" href="#channels">Watch my work</a>
+    </div>
+    <div class="stats">
+      <div class="stat"><span class="sn">5+</span><span class="sl">Years in machine learning and data work</span></div>
+      <div class="stat"><span class="sn">95%+</span><span class="sl">Accuracy rate on dataset classification</span></div>
+      <div class="stat"><span class="sn">20%</span><span class="sl">Output efficiency gained through workflow automation</span></div>
+      <div class="stat"><span class="sn">15%</span><span class="sl">Reduction in manual review time</span></div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="slabel">About</div>
+    <h2>Who I am</h2>
+    <div class="about-grid">
+      <div class="about-left">
+        <p>I'm a Computer Science graduate who has spent five years at the intersection of <strong>software engineering and high-quality data work</strong>.</p>
+        <p>I run RLHF pipelines, evaluate LLM outputs for logic and safety, and annotate image and video datasets for computer vision models. I care deeply about accuracy — <strong>95%+ on every project</strong>.</p>
+        <p>Alongside that, I direct end-to-end post-production for YouTube creators: color grading, motion graphics, AI-assisted editing, and thumbnails that actually get clicked.</p>
+        <div class="langs">
+          <div class="li"><span class="ln">Amharic</span><span class="ll">Native</span></div>
+          <div class="li"><span class="ln">English</span><span class="ll">Fluent</span></div>
+          <div class="li"><span class="ln">Afan Oromo</span><span class="ll">Conversational</span></div>
+        </div>
+      </div>
+      <div>
+        <div class="edu">
+          <div class="eu">Jimma University · Jimma, Ethiopia</div>
+          <div class="ed">BSc in Computer Science</div>
+          <div class="ey">Graduated 2019</div>
+          <p style="font-size:14px;color:var(--muted)">Relevant coursework</p>
+          <div class="courses">
+            <span class="cc">Machine Learning</span><span class="cc">Algorithms</span><span class="cc">Data Structures</span><span class="cc">Database Systems</span><span class="cc">AI</span><span class="cc">Software Engineering</span>
+          </div>
+          <div class="cap">
+            <div class="capl">Capstone Project</div>
+            <p>Built and trained an image classification model in Python, achieving 83% accuracy on a custom dataset.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <div class="slabel">Experience</div>
+    <h2>Where I've worked</h2>
+    <article class="exp">
+      <div><div class="ep">Jan 2023<br>Jul 2024</div><span class="badge bpast">Remote</span></div>
+      <div>
+        <h3>AI Data &amp; Machine Learning Specialist</h3>
+        <div class="co">Appen</div>
+        <ul class="xlist">
+          <li><span>Ran RLHF and supervised fine-tuning protocols to evaluate and improve generative AI model accuracy.</span></li>
+          <li><span>Labeled large-scale image and video datasets for computer vision — object detection, facial recognition, sentiment analysis.</span></li>
+          <li><span>Maintained 95%+ accuracy on demanding labeling tasks under complex alignment guidelines.</span></li>
+          <li><span>Streamlined annotation workflows, boosting individual output efficiency by 20%.</span></li>
+          <li><span>Wrote high-quality prompts and evaluated AI responses for logic, safety and coding accuracy to train LLMs.</span></li>
+        </ul>
+      </div>
+    </article>
+    <article class="exp">
+      <div><div class="ep">Jan 2021<br>Present</div><span class="badge bnow">Current</span></div>
+      <div>
+        <h3>Freelance Video Editor &amp; Multimedia Specialist</h3>
+        <div class="co">YouTube Creator Network &amp; independent clients</div>
+        <ul class="xlist">
+          <li><span>Directed end-to-end post-production for high-traffic YouTube channels in Premiere Pro and DaVinci Resolve.</span></li>
+          <li><span>Cut and color-graded raw 4K video and audio optimised for strict weekly upload schedules.</span></li>
+          <li><span>Used AI-assisted tools for transcription, audio cleanup and dynamic scene cutting.</span></li>
+          <li><span>Designed motion graphics, B-roll integrations and high-CTR thumbnails guided by analytics and viewer trends.</span></li>
+        </ul>
+      </div>
+    </article>
+    <article class="exp">
+      <div><div class="ep">Apr 2019<br>Dec 2022</div><span class="badge bpast">Remote</span></div>
+      <div>
+        <h3>Trust &amp; Safety Data Analyst</h3>
+        <div class="co">Appen</div>
+        <ul class="xlist">
+          <li><span>Reviewed sensitive user-generated content across global platforms to enforce Trust &amp; Safety guidelines.</span></li>
+          <li><span>Analyzed text, images and video for policy violations — accuracy and quality consistently above 90%.</span></li>
+          <li><span>Worked with engineering teams to refine automated moderation, cutting manual review time by 15%.</span></li>
+          <li><span>Gave structured edge-case feedback to ML engineers, directly improving automated content filtering.</span></li>
+        </ul>
+      </div>
+    </article>
+  </section>
+
+  <!-- VIDEO WORK -->
+  <section id="channels">
+    <div class="slabel">Video work</div>
+    <h2>Channels I've built</h2>
+    <p class="yt-intro">Three YouTube channels grown from the ground up — each edited for audience retention, subscriber growth, and consistent weekly output. Click a channel tab to browse videos, or open directly on YouTube.</p>
+
+    <!-- CHANNEL TABS -->
+    <div class="ch-tabs" role="tablist">
+
+      <!-- Feline Visione -->
+      <button class="ch-tab active" role="tab" aria-selected="true" onclick="pick('feline',this)" aria-controls="vp-feline">
+        <div class="ch-accent-bar bar-purple"></div>
+        <div class="ch-banner ban-purple">🐱</div>
+        <div class="ch-body">
+          <div class="ch-name">Feline Visione</div>
+          <div class="ch-niche">Cat behavior &amp; education</div>
+          <div class="ch-subs subs-purple">64K+ subscribers</div>
+          <div class="ch-tags">
+            <span class="ch-tag">Retention editing</span>
+            <span class="ch-tag">Educational hooks</span>
+            <span class="ch-tag">Weekly uploads</span>
+          </div>
+          <div class="ch-footer">
+            <span class="ch-role">Editor &amp; producer</span>
+            <a class="yt-btn" href="https://youtube.com/@felinevisione" target="_blank" rel="noopener" onclick="event.stopPropagation()">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5S4.5 3.5 2.6 4.1A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.5 15.6V8.4L15.8 12l-6.3 3.6z"/></svg>
+              YouTube
+            </a>
+          </div>
+        </div>
+      </button>
+
+      <!-- Fight Logic -->
+      <button class="ch-tab" role="tab" aria-selected="false" onclick="pick('fight',this)" aria-controls="vp-fight">
+        <div class="ch-accent-bar bar-red"></div>
+        <div class="ch-banner ban-red">🥊</div>
+        <div class="ch-body">
+          <div class="ch-name">Fight Logic</div>
+          <div class="ch-niche">Combat sports &amp; MMA analysis</div>
+          <div class="ch-subs subs-red">33K+ subscribers</div>
+          <div class="ch-tags">
+            <span class="ch-tag">Fast-cut editing</span>
+            <span class="ch-tag">Audio design</span>
+            <span class="ch-tag">Hype pacing</span>
+          </div>
+          <div class="ch-footer">
+            <span class="ch-role">Editor &amp; producer</span>
+            <a class="yt-btn" href="https://youtube.com/@fightlogic.12" target="_blank" rel="noopener" onclick="event.stopPropagation()">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5S4.5 3.5 2.6 4.1A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.5 15.6V8.4L15.8 12l-6.3 3.6z"/></svg>
+              YouTube
+            </a>
+          </div>
+        </div>
+      </button>
+
+      <!-- Ember -->
+      <button class="ch-tab" role="tab" aria-selected="false" onclick="pick('ember',this)" aria-controls="vp-ember">
+        <div class="ch-accent-bar bar-orange"></div>
+        <div class="ch-banner ban-orange">🔥</div>
+        <div class="ch-body">
+          <div class="ch-name">Ember</div>
+          <div class="ch-niche">Motivation &amp; self-improvement</div>
+          <div class="ch-subs subs-orange">1.4K+ subscribers</div>
+          <div class="ch-tags">
+            <span class="ch-tag">Story pacing</span>
+            <span class="ch-tag">Sound design</span>
+            <span class="ch-tag">Hook optimization</span>
+          </div>
+          <div class="ch-footer">
+            <span class="ch-role">Editor &amp; producer</span>
+            <a class="yt-btn" href="https://youtube.com/@ember.78" target="_blank" rel="noopener" onclick="event.stopPropagation()">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5S4.5 3.5 2.6 4.1A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.5 15.6V8.4L15.8 12l-6.3 3.6z"/></svg>
+              YouTube
+            </a>
+          </div>
+        </div>
+      </button>
+    </div>
+
+    <!-- VIDEO PANELS -->
+    <div class="video-panel">
+      <div class="vp-header">
+        <div class="vp-title">
+          <span class="vp-dot" id="vpDot" style="background:#7B61FF"></span>
+          <span id="vpTitle">Feline Visione — Sample videos</span>
+        </div>
+        <div class="vp-hint">Click any video to watch on YouTube</div>
+      </div>
+
+      <!-- FELINE panel -->
+      <div id="vp-feline" class="vgrid">
+        <a class="vc" href="https://www.youtube.com/watch?v=hDcSWczCpZ0" target="_blank" rel="noopener">
+          <div class="vc-thumb">
+            <img src="https://img.youtube.com/vi/hDcSWczCpZ0/hqdefault.jpg" alt="Every Cat Owner Needs to Hear This" loading="lazy" onerror="this.style.display='none'">
+            <div class="vc-overlay"><div class="play-circle"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div>
+          </div>
+          <div class="vc-info"><div class="vc-ttl">Every Cat Owner Needs to Hear This</div><div class="vc-meta">Feline Visione ↗</div></div>
+        </a>
+        <a class="vc" href="https://youtube.com/@felinevisione" target="_blank" rel="noopener">
+          <div class="vc-placeholder">🐱</div>
+          <div class="vc-info"><div class="vc-ttl" style="color:var(--muted)">64K+ subscribers — See all videos on YouTube</div><div class="vc-meta">Open channel ↗</div></div>
+        </a>
+      </div>
+
+      <!-- FIGHT panel (hidden) -->
+      <div id="vp-fight" class="vgrid" style="display:none">
+        <a class="vc" href="https://www.youtube.com/watch?v=vuo4bMolBO4" target="_blank" rel="noopener">
+          <div class="vc-thumb">
+            <img src="https://img.youtube.com/vi/vuo4bMolBO4/hqdefault.jpg" alt="Why the Greatest Heavyweight Never Fought in the UFC" loading="lazy" onerror="this.style.display='none'">
+            <div class="vc-overlay"><div class="play-circle"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div>
+          </div>
+          <div class="vc-info"><div class="vc-ttl">Why the Greatest Heavyweight Never Fought in the UFC</div><div class="vc-meta">Fight Logic ↗</div></div>
+        </a>
+        <a class="vc" href="https://youtube.com/@fightlogic.12" target="_blank" rel="noopener">
+          <div class="vc-placeholder">🥊</div>
+          <div class="vc-info"><div class="vc-ttl" style="color:var(--muted)">33K+ subscribers — See all videos on YouTube</div><div class="vc-meta">Open channel ↗</div></div>
+        </a>
+        <a class="vc" href="https://youtube.com/@fightlogic.12" target="_blank" rel="noopener">
+          <div class="vc-placeholder" style="font-size:22px;flex-direction:column;gap:8px">
+            <span style="font-size:36px">🥊</span>
+            <span style="font-size:12px;color:var(--muted);font-family:var(--fm)">More on YouTube</span>
+          </div>
+          <div class="vc-info"><div class="vc-ttl" style="color:var(--muted)">MMA analysis, fighter breakdowns &amp; combat sports stories</div><div class="vc-meta">Open channel ↗</div></div>
+        </a>
+      </div>
+
+      <!-- EMBER panel (hidden) -->
+      <div id="vp-ember" class="vgrid" style="display:none">
+        <a class="vc" href="https://www.youtube.com/watch?v=qI6C-4rkZks" target="_blank" rel="noopener">
+          <div class="vc-thumb">
+            <img src="https://img.youtube.com/vi/qI6C-4rkZks/hqdefault.jpg" alt="3 steps to setting goals that actually work" loading="lazy" onerror="this.style.display='none'">
+            <div class="vc-overlay"><div class="play-circle"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div>
+          </div>
+          <div class="vc-info"><div class="vc-ttl">3 Steps to Setting Goals That Actually Work</div><div class="vc-meta">Ember ↗</div></div>
+        </a>
+        <a class="vc" href="https://youtube.com/@ember.78" target="_blank" rel="noopener">
+          <div class="vc-placeholder">🔥</div>
+          <div class="vc-info"><div class="vc-ttl" style="color:var(--muted)">1.4K+ subscribers — See all videos on YouTube</div><div class="vc-meta">Open channel ↗</div></div>
+        </a>
+        <a class="vc" href="https://youtube.com/@ember.78" target="_blank" rel="noopener">
+          <div class="vc-placeholder" style="flex-direction:column;gap:8px">
+            <span style="font-size:36px">🔥</span>
+            <span style="font-size:12px;color:var(--muted);font-family:var(--fm)">More on YouTube</span>
+          </div>
+          <div class="vc-info"><div class="vc-ttl" style="color:var(--muted)">Motivation, self-discipline &amp; life insights</div><div class="vc-meta">Open channel ↗</div></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="slabel">Skills</div>
+    <h2>What I work with</h2>
+    <div class="skills-grid">
+      <div class="sk"><div class="sk-icon">🧠</div><h3>AI and machine learning</h3><div class="chips"><span class="chip">RLHF</span><span class="chip">Supervised Fine-Tuning</span><span class="chip">Prompt Engineering</span><span class="chip">LLM Evaluation</span><span class="chip">Data Annotation</span><span class="chip">Alignment Guidelines</span></div></div>
+      <div class="sk"><div class="sk-icon">👁</div><h3>Computer vision and data</h3><div class="chips"><span class="chip">Object Detection</span><span class="chip">Image Classification</span><span class="chip">Video Classification</span><span class="chip">Facial Recognition</span><span class="chip">Content Moderation</span><span class="chip">Sentiment Analysis</span></div></div>
+      <div class="sk"><div class="sk-icon">⌨️</div><h3>Technical stack</h3><div class="chips"><span class="chip">Python</span><span class="chip">SQL</span><span class="chip">Java</span><span class="chip">Git</span><span class="chip">Jira</span></div></div>
+      <div class="sk"><div class="sk-icon">🎬</div><h3>Video production</h3><div class="chips"><span class="chip">Premiere Pro</span><span class="chip">DaVinci Resolve</span><span class="chip">CapCut</span><span class="chip">Color Grading</span><span class="chip">Motion Graphics</span><span class="chip">Thumbnail Design</span></div></div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <div class="contact-wrap" id="contact">
+    <div class="ci">
+      <div class="slabel" style="justify-content:center">Contact</div>
+      <h2>Let's build something together</h2>
+      <p class="csub">Looking for an AI data specialist or a video editor to grow your channel? Send me a message.</p>
+      <a class="email-link" href="mailto:IbrarahimSiraj49@gmail.com">IbrarahimSiraj49@gmail.com</a><br>
+      <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
+        <a class="btn-fill" href="mailto:IbrarahimSiraj49@gmail.com">Send an email</a>
+        <a class="btn-ghost" href="tel:+251925730290">+251 925 730 290</a>
+      </div>
+    </div>
+  </div>
+</div>
+</main>
+
+<footer><div class="wrap"><span>© 2026 Ibrahim Siraj</span><span>Addis Ababa, Ethiopia</span></div></footer>
+
+<script>
+const PANELS = { feline:'vp-feline', fight:'vp-fight', ember:'vp-ember' };
+const DOTS = { feline:'#7B61FF', fight:'#FF6B6B', ember:'#FF9A3C' };
+const TITLES = {
+  feline:'Feline Visione — Sample videos',
+  fight:'Fight Logic — Sample videos',
+  ember:'Ember — Sample videos'
+};
+let active = 'feline';
+
+function pick(id, btn) {
+  if (id === active) return;
+  active = id;
+  // tabs
+  document.querySelectorAll('.ch-tab').forEach(t => {
+    t.classList.remove('active');
+    t.setAttribute('aria-selected','false');
+  });
+  btn.classList.add('active');
+  btn.setAttribute('aria-selected','true');
+  // panels
+  Object.values(PANELS).forEach(pid => {
+    document.getElementById(pid).style.display = 'none';
+  });
+  document.getElementById(PANELS[id]).style.display = 'grid';
+  // header
+  document.getElementById('vpDot').style.background = DOTS[id];
+  document.getElementById('vpTitle').textContent = TITLES[id];
+}
+
+// keyboard for tab buttons
+document.querySelectorAll('.ch-tab').forEach(tab => {
+  tab.addEventListener('keydown', e => {
+    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); tab.click(); }
+  });
+});
+</script>
+</body>
+</html>
